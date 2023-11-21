@@ -40,13 +40,13 @@ export default function CalculatorImc () {
                         <div className="Male">
                             <img alt='button' className="MaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-male"/>
                             <div className="selectedMale">
-                                <input type="checkbox" id="male" name="gender" value="male"  checked={isChecked1} onChange={handleCheckboxChange1}/>
+                                <input type="checkbox" id="male" name="gender" value="male"  value={isChecked1} onChange={handleCheckboxChange1}/>
                             </div>
                         </div>
                         <div className="Famale">
                             <img alt='button' className="FamaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-female"/>
                             <div className="selectedFamale">
-                                <input type="checkbox" id="female" name="gender" value="female"  checked={isChecked2} onChange={handleCheckboxChange2}/>
+                                <input type="checkbox" id="female" name="gender" value="female"  value={isChecked2} onChange={handleCheckboxChange2}/>
                             </div>
                         </div>
                     </div>
