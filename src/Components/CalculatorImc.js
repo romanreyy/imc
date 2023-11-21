@@ -9,13 +9,17 @@ export default function CalculatorImc () {
     const [result, setResult] = useState(null);
 
     const handleCheckboxChange1 = () => {
-        setIsChecked1(true);
-        setIsChecked2(false);
+        if (isChecked1 === true){
+            setIsChecked1(true);
+            setIsChecked2(false);
+        }
     }
 
     const handleCheckboxChange2 = () => {
-        setIsChecked1(false);
-        setIsChecked2(true);
+        if (isChecked2 === true) {
+            setIsChecked1(false);
+            setIsChecked2(true);
+        }
     }
     
     const calculateImc = () => {
@@ -38,7 +42,7 @@ export default function CalculatorImc () {
                     <h2 className="titleSections">¿Cuál es su género?</h2>
                     <div className="selectGender">
                         <div className="Male">
-                            <img alt='button' className="MaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-male"/>
+                            <img alt='boton' className="MaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-male"/>
                             <div className="selectedMale">
                                 <input type="checkbox" id="male" name="gender" value="male"  value={isChecked1} onChange={handleCheckboxChange1}/>
                             </div>
