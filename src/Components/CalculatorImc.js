@@ -1,16 +1,11 @@
 import React, { useState} from "react";
 
 export default function CalculatorImc () {
-    const [selectedCheckbox, setSelectedCheckbox] = useState('');
     const [age, setAge] = useState('');
     const [height, setHeight] = useState('');
     const [weight, setWeight] = useState('');
     const [result, setResult] = useState(null);
 
-    const handleCheckboxChange = (id) => {
-        setSelectedCheckbox (id === 'female' ? 'male' : 'female');
-    }
-    
     const calculateImc = () => {
         if (age && height && weight) {
             const heightInMeters = height / 100;
@@ -33,13 +28,13 @@ export default function CalculatorImc () {
                         <div className="Male">
                             <img alt='boton' className="MaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-male"/>
                             <div className="selectedMale">
-                                <input type="checkbox" id="male" name="gender" value="male"  checked={selectedCheckbox === 'male'} onChange={handleCheckboxChange ('male')}/>
+                                <input type="checkbox" id="male" name="gender" value="male"/>
                             </div>
                         </div>
                         <div className="Famale">
                             <img alt='button' className="FamaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-female"/>
                             <div className="selectedFamale">
-                                <input type="checkbox" id="female" name="gender" value="female"  checked={selectedCheckbox === 'female'} onChange={handleCheckboxChange ('female')}/>
+                                <input type="checkbox" id="female" name="gender" value="female"/>
                             </div>
                         </div>
                     </div>
