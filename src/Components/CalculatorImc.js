@@ -1,7 +1,7 @@
 import React, { useState} from "react";
 
 export default function CalculatorImc () {
-    const [selectedCheckbox, setSelectedCheckbok] = useState('');
+    const [selectedCheckbox, setSelectedCheckbox] = useState('');
     const [age, setAge] = useState('');
     const [height, setHeight] = useState('');
     const [weight, setWeight] = useState('');
