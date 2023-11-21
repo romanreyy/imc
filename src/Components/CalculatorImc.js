@@ -1,11 +1,23 @@
 import React, { useState} from "react";
 
 export default function CalculatorImc () {
+    const [isChecked1, setIsChecked1] = useState(false);
+    const [isChecked2, setIsChecked2] = useState(false);
     const [age, setAge] = useState('');
     const [height, setHeight] = useState('');
     const [weight, setWeight] = useState('');
     const [result, setResult] = useState(null);
 
+    const handleCheckboxChange1 = () => {
+        setIsChecked1(true);
+        setIsChecked2(false);
+    }
+
+    const handleCheckboxChange2 = () => {
+        setIsChecked1(false);
+        setIsChecked2(true);
+    }
+    
     const calculateImc = () => {
         if (age && height && weight) {
             const heightInMeters = height / 100;
@@ -28,13 +40,13 @@ export default function CalculatorImc () {
                         <div className="Male">
                             <img alt='button' className="MaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-male"/>
                             <div className="selectedMale">
-                                <input type="checkbox" id="male" name="gender" value="male"/>
+                                <input type="checkbox" id="male" name="gender" value="male"  checked={isChecked1} onChange={handleCheckboxChange1}/>
                             </div>
                         </div>
                         <div className="Famale">
                             <img alt='button' className="FamaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-female"/>
                             <div className="selectedFamale">
-                                <input type="checkbox" id="female" name="gender" value="female"/>
+                                <input type="checkbox" id="female" name="gender" value="female"  checked={isChecked2} onChange={handleCheckboxChange2}/>
                             </div>
                         </div>
                     </div>
