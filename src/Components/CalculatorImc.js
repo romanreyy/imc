@@ -13,10 +13,7 @@ export default function CalculatorImc () {
             setIsChecked1(true);
             setIsChecked2(false);
         }
-    }
-
-    const handleCheckboxChange2 = () => {
-        if (isChecked2 === true) {
+        else if (isChecked2 === true) {
             setIsChecked1(false);
             setIsChecked2(true);
         }
@@ -50,7 +47,7 @@ export default function CalculatorImc () {
                         <div className="Famale">
                             <img alt='button' className="FamaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-female"/>
                             <div className="selectedFamale">
-                                <input type="checkbox" id="female" name="gender" value="female"  value={isChecked2} onChange={handleCheckboxChange2}/>
+                                <input type="checkbox" id="female" name="gender" value="female"  value={isChecked2} onChange={handleCheckboxChange1}/>
                             </div>
                         </div>
                     </div>
