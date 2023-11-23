@@ -7,13 +7,9 @@ export default function CalculatorImc () {
     const [result, setResult] = useState(null);
     const [checked, setChecked] = useState(false);
 
-    const handleChange = (e) => {
-    if (e.target.checked) {
-      setChecked(true);
-    } else {
-      setChecked(false);
+    const handleChange = (position) => {
+        setChecked(position);
     }
-  }
     const calculateImc = () => {
         if (age && height && weight) {
             const heightInMeters = height / 100;
@@ -36,13 +32,13 @@ export default function CalculatorImc () {
                         <div className="Male">
                             <img alt='boton' className="MaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-male"/>
                             <div className="selectedMale">
-                                <input type="checkbox" checked={checked} onChange={handleChange}/>
+                                <input type="checkbox" checked={checked === 1} onChange={() => handleChange(1)} />
                             </div>
                         </div>
                         <div className="Famale">
                             <img alt='button' className="FamaleImg" src="https://assets.yazio.com/frontend/images/icons.svg#icon-female"/>
                             <div className="selectedFamale">
-                                <input type="checkbox" checked={!checked} onChange={handleChange}/>
+                                <input type="checkbox" checked={checked === 2} onChange={() => handleChange(2)} />
                             </div>
                         </div>
                     </div>
