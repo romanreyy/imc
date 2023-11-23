@@ -107,7 +107,7 @@ export default function CalculatorImc () {
                 <button className="buttonCalculate" onClick={calculateImc}>
                     Calcular IMC
                 </button>
-                <div>
+                <div className="resultIMC">
                     {result && (
                         <div>
                             <h1 className="result">Tu resultado</h1>
