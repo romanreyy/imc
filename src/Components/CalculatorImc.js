@@ -7,9 +7,13 @@ export default function CalculatorImc () {
     const [result, setResult] = useState(null);
     const [checked, setChecked] = useState(false);
 
-    const handleChange = () => {
-        setChecked(!checked);
+    const handleChange = (e) => {
+    if (e.target.checked) {
+      setChecked(true);
+    } else {
+      setChecked(false);
     }
+  }
     const calculateImc = () => {
         if (age && height && weight) {
             const heightInMeters = height / 100;
