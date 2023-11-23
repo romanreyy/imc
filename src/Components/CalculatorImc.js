@@ -1,4 +1,4 @@
-import React, { useState} from "react";
+import React, { useState, useRef} from "react";
 
 export default function CalculatorImc () {
     const [age, setAge] = useState('');
@@ -6,6 +6,7 @@ export default function CalculatorImc () {
     const [weight, setWeight] = useState('');
     const [result, setResult] = useState(null);
     const [checked, setChecked] = useState(false);
+    const resultRef = useRef(null);
 
     const handleChange = (position) => {
         setChecked(position);
@@ -19,6 +20,11 @@ export default function CalculatorImc () {
         } else {
             setResult(null);
         }
+
+        window.scrollTo({
+          top: resultRef.current.offsetTop,
+          behavior: "smooth" 
+        });
     }
     return (
         <section>
@@ -107,7 +113,7 @@ export default function CalculatorImc () {
                 <button className="buttonCalculate" onClick={calculateImc}>
                     Calcular IMC
                 </button>
-                <div className="resultIMC">
+                <div className="resultIMC" ref={resultRef}>
                     {result && (
                         <div>
                             <h1 className="result">Tu resultado</h1>
