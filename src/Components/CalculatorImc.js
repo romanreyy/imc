@@ -135,6 +135,11 @@ export default function CalculatorImc () {
                                     </div>
                                 </div>
                             </div>
+                        <div>
+                            <p className="description">
+                                Si su IMC es menos de 18.5, se encuentra dentro del rango de peso insuficiente. Si su IMC es entre 18.5 y 24.9, se encuentra dentro del rango de peso normal o saludable. Si su IMC es entre 25.0 y 29.9, se encuentra dentro del rango de sobrepeso. Si su IMC es 30.0 o superior, se encuentra dentro del rango de obesidad.
+                            </p>
+                        </div>
                         </div>
                     )}
                 </div>
